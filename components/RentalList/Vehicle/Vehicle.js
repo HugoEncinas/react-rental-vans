@@ -1,0 +1,52 @@
+import { Button, Grid, Card, CardActionArea,  CardMedia,  CardContent, CardActions, Typography} from '@material-ui/core';
+import ReactStars from "react-rating-stars-component";
+import React from 'react';
+
+const Vehicle = ({
+  name,
+  image,
+  type,
+  location,
+  pricePerDay,
+  rentalScore
+}) => {
+
+  const ratingConfig = {
+    size: 30,
+    count: 10,
+    value: rentalScore*10,
+    edit: false
+  };
+
+  return (
+    <Grid item xs={12} sm={6}>
+      <Card>
+        <CardActionArea>
+          <CardMedia
+            component="img"
+            alt={name}
+            height="140"
+            image={image}
+            title={name}
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="h2">
+              {type} · {location}
+            </Typography>
+            <Typography variant="body2" color="textSecondary" component="p">
+              ${pricePerDay}
+            </Typography>
+            <ReactStars {...ratingConfig} />
+          </CardContent>
+        </CardActionArea>
+        <CardActions>
+          <Button size="small" color="primary">
+            Learn More
+          </Button>
+        </CardActions>
+      </Card>
+    </Grid>
+  );
+};
+
+export default Vehicle;
