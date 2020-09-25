@@ -1,14 +1,16 @@
 import { Button, Grid, Card, CardActionArea,  CardMedia,  CardContent, CardActions, Typography} from '@material-ui/core';
 import ReactStars from "react-rating-stars-component";
 import React from 'react';
+import Link from 'next/link'
 
 const Vehicle = ({
+  id,
   name,
   image,
   type,
   location,
   pricePerDay,
-  rentalScore
+  rentalScore,
 }) => {
 
   const ratingConfig = {
@@ -40,9 +42,11 @@ const Vehicle = ({
           </CardContent>
         </CardActionArea>
         <CardActions>
-          <Button size="small" color="primary">
-            Learn More
-          </Button>
+          <Link href={`/vehicles/${id}`}>
+            <Button size="small" color="primary">
+              Learn More
+            </Button>
+          </Link>
         </CardActions>
       </Card>
     </Grid>

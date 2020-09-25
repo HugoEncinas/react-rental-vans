@@ -1,4 +1,4 @@
-const getRentalList = async (url) => {
+const getAPI = async (url) => {
   try {
     const response = await fetch(url);
     const data = await response.json();
@@ -8,4 +8,4 @@ const getRentalList = async (url) => {
   }
 };
 
-export default getRentalList;
+export default getAPI;

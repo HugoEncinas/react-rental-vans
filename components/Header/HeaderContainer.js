@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 
 import { useStateValue } from '../../context/StateProvider';
-import getRentalList from '../../services/getRentalList'
+import getAPI from '../../services/getAPI'
 import HeaderDisplay from './HeaderDisplay'
 
 const HeaderContainer = () => {
@@ -25,7 +25,7 @@ const HeaderContainer = () => {
 
   const fetchData = async () => {
     const url = `https://odc-search-staging.herokuapp.com/rentals?filter[type]=${searchValue}&address=san%20francisco&page[limit]=${pagelimit}&page[offset]=${pageoffset}`;
-    const {data} = await getRentalList(url);
+    const {data} = await getAPI(url);
     dispatch({
       type: 'SET_RENTAL_LIST',
       payload: data
