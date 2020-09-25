@@ -1,14 +1,10 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 
 import { useStateValue } from '../../context/StateProvider';
 import RentalListDisplay from './RentalListDisplay'
 
 const RentalListContainer = () => {
-  const [{ rentalList }, dispatch ] = useStateValue();
-
-  useEffect(()=> {
-    console.log('rentalList', rentalList)
-  }, [rentalList])
+  const [{ rentalList }] = useStateValue();
 
   return (
     <RentalListDisplay rentalList={rentalList} />

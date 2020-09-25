@@ -18,7 +18,6 @@ const HeaderContainer = () => {
 
   const submitHandler = event => {
     if (event.type === 'click' || event.charCode === 13) {
-      console.log('event', event.type);
       fetchData();
     }
   };

@@ -32,8 +32,11 @@ const Vehicle = ({
             title={name}
           />
           <CardContent>
-            <Typography gutterBottom variant="h5" component="h2">
+            <Typography gutterBottom variant="h5" component="h5">
               {type} · {location}
+            </Typography>
+            <Typography gutterBottom variant="h4" component="h4">
+              {name}
             </Typography>
             <Typography variant="body2" color="textSecondary" component="p">
               ${pricePerDay}
